@@ -1,0 +1,131 @@
+<div class="decontainer">
+    <div class="divLeft">
+        <div class="topTitle cfx">
+            <div class="recTitle">
+                <p class="recTitleName">{{recipe.name}}</p>
+            </div>
+        </div>
+
+        <div class="recImg bgImg cfx" style="background-image: url({{recipe.imageUrl}});" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+            <img src="{{recipe.imageUrl}}" style="visibility:hidden;">
+        </div>
+
+        <div class="recTime cfx">
+            <div class="recTimeTitle">
+                <p class="timeTitle">Cooking Time</p>
+            </div>
+            <div class="AllTime">
+                <div class="prepTime">
+                    <p class="pt">Preperation Time : {{recipe.prepTimeinMins}}</p>
+                </div>
+                <div class="cookTime">
+                    <p class="ct">Cook Time : {{recipe.cookTimeinMins}}</p>
+                </div>
+                <div class="totalTime">
+                    <p class="tt">Total Time : {{recipe.totalTimeinMins}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="recIng cfx">
+            <div class="recIngTitle cfx">
+                <div class="recIngLeft">
+                    <p class="ingTitle">Ingredients</p>
+                </div>
+                <div class="recIngRight">
+                    <p class="recServe"> Serves {{recipe.serves}}</p>
+                </div>
+            </div>
+            <ul class="recIngNos">
+                {{#each recipe.ingredients}}
+                <li class='ingNos'>
+                    <p>{{name}} {{quantity}}</p>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="recDesc cfx">
+            <div class="recDescTitle">
+                <p class="descTitle">Description</p>
+            </div>
+            <ol class="recDescNos">
+                {{#each recipe.description}}
+                <li class="descNos cfx">
+                    <div class='descNum'><i class="fa fa-dot-circle-o" aria-hidden="true"></i></div>
+                    <div class='descStep'>
+                        <p>{{this}}</p>
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+        </div>
+        <div class="recRating cfx">
+            <div class="cfx">
+                <div class="ratingTitle">
+                    <p>Review</p>
+                </div>
+                <div class="ratingStar">
+                    <div class='ratingBottom'>
+                        <i class='fa fa-star' aria-hidden='true'></i>
+                        <i class='fa fa-star' aria-hidden='true'></i>
+                        <i class='fa fa-star' aria-hidden='true'></i>
+                        <i class='fa fa-star' aria-hidden='true'></i>
+                        <i class='fa fa-star' aria-hidden='true'></i>
+                        <div class='ratingTop' style='width: 0%'>
+                            <i class='fa fa-star' aria-hidden='true'></i>
+                            <i class='fa fa-star' aria-hidden='true'></i>
+                            <i class='fa fa-star' aria-hidden='true'></i>
+                            <i class='fa fa-star' aria-hidden='true'></i>
+                            <i class='fa fa-star' aria-hidden='true'></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="ratingCount">
+                    <p>0</p>
+                </div>
+            </div>
+            <div class="recComment hidden cfx">
+                <div class="commentInput">
+                    <textarea class="commentText" name="comment" placeholder="Enter your comment"></textarea>
+                </div>
+                <div class="commentRating">
+                    <fieldset class="ratingUpdate">
+                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4
+                            stars
+                        </label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1
+                            star
+                        </label>
+                    </fieldset>
+                </div>
+                <div class="commentButton">
+                    <a class="cmntBtn" id="comment">Post</a>
+                </div>
+            </div>
+            <div class="cmntLogin">
+                <p data-toggle="modal" data-target="#myModal">Please Signin to comment</p>
+            </div>
+            <div class="viewComment cfx">
+            </div>
+            <div id="seeMore">
+                <a>See more</a>
+            </div>
+        </div>
+    </div>
+    <div class="contestRight">
+        <div class="profile cfx">
+            <div class="profImg lazyload bgImg" style="background-image: url(https://recipebook.io/public/images/thumb.png);" data-src="https://img.food.boxspace.in/user_image/rbkapp_5a016e127d3d1/index.jpg">
+                <img src="https://img.food.boxspace.in/user_image/rbkapp_5a016e127d3d1/index.jpg" style="display:none;">
+            </div>
+            <div class="profName">
+                <!--<p class="pName"><?/*=$profile['name']*/?></p>-->
+                <p class="pName">Renu Chandratre</p>
+                <p class="pCount">90 Recipes</p>
+            </div>
+            <div class="profFollow">
+                <a id='follow'>Follow</a> </div>
+        </div>
+    </div>
+</div>

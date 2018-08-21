@@ -26,8 +26,10 @@ exports.create = async (req, res) => {
 };
 
 exports.detail = async (req, res) => {
-    let user = await User.findOne({ _id: req.params.id });
-    res.send(user);
+    let id = (req.params && req.params.id) ? req.params.id : req;
+    let user = await User.findOne({ _id: id });
+    console.log(user);
+    return user;
 };
 
 exports.update = async (req, res) => {
