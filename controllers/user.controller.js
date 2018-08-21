@@ -28,7 +28,6 @@ exports.create = async (req, res) => {
 exports.detail = async (req, res) => {
     let id = (req.params && req.params.id) ? req.params.id : req;
     let user = await User.findOne({ _id: id });
-    console.log(user);
     return user;
 };
 
@@ -41,3 +40,9 @@ exports.delete = async (req, res) => {
     await User.deleteOne({ _id: req.params.id });
     res.send('User has been deleted successfully!');
 };
+
+exports.getUserName = async (req, res) => {
+    let id = (req.params && req.params.id) ? req.params.id : req;
+    let user = await User.findOne({ _id: id });
+    return user.profile.firstName + ', ' + user.profile.lastName;
+}

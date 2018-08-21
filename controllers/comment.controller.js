@@ -1,5 +1,6 @@
 const Comment = require('../models/comment.model');
 const mongoose = require('mongoose');
+const dateFormat = require('dateformat');
 
 exports.all = async (req, res) => {
     let comments = await Comment.find({});
@@ -36,10 +37,11 @@ exports.delete = async (req, res) => {
 
 exports.getCommentsByUser = async (req, res) => {
     const comments = await Comment.find({ postedBy: req.params.postedBy });
-    res.send(comments);
+    return comments;
 };
 
 exports.getCommentsByRecipe = async (req, res) => {
-    const comments = await Comment.find({ recipeId: req.params.recipeId });
-    res.send(comments);
+    let id = (req.params && req.params.id) ? req.params.id : req;
+    const comments = await Comment.find({ recipeId: id });
+    return comments;
 };

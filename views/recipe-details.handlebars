@@ -108,24 +108,31 @@
                 <p data-toggle="modal" data-target="#myModal">Please Signin to comment</p>
             </div>
             <div class="viewComment cfx">
-            </div>
-            <div id="seeMore">
-                <a>See more</a>
+                {{#each recipe.userComments}}
+                <div class="commentOne" style="">
+                    <div class="commentPadding">
+                        <div class="commentedTop cfx">
+                            <div class="commentName">
+                                <p>{{postedBy}}</p>
+                            </div>
+                            <div class="commentTime">
+                                <p>{{createdAt}}</p>
+                            </div>
+                        </div>
+                        <div class="commented cfx">
+                            <p>{{comment}}</p>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
             </div>
         </div>
     </div>
     <div class="contestRight">
         <div class="profile cfx">
-            <div class="profImg lazyload bgImg" style="background-image: url(https://recipebook.io/public/images/thumb.png);" data-src="https://img.food.boxspace.in/user_image/rbkapp_5a016e127d3d1/index.jpg">
-                <img src="https://img.food.boxspace.in/user_image/rbkapp_5a016e127d3d1/index.jpg" style="display:none;">
-            </div>
-            <div class="profName">
-                <!--<p class="pName"><?/*=$profile['name']*/?></p>-->
-                <p class="pName">Renu Chandratre</p>
-                <p class="pCount">90 Recipes</p>
-            </div>
-            <div class="profFollow">
-                <a id='follow'>Follow</a> </div>
+            Author:
+            <p class="pName">{{recipe.author}}</p>
         </div>
+        <iframe width="100%" src="{{recipe.videoUrl}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
 </div>

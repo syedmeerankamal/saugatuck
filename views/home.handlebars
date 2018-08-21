@@ -1,43 +1,55 @@
-<div class="swipeTags ">
-    <div class="owlSlider owl-carousel owl-theme" style="opacity: 1; display: block;">
-        <div class="owl-wrapper-outer">
-            <div class="owl-wrapper" style="width: 4120px; left: 0px; display: block; transition: all 0ms ease 0s; transform: translate3d(0px, 0px, 0px);">
-                {{#each recipes}}
-                <div class="owl-item" style="width: 206px;">
-                    <div class="item">
-                        <div class="thumbs">
-                            <a class="hrefing cfx" href="/recipe-details/{{_id}}">
-                                <div class="thumbImage lazyload bgImg" style="background-image: url(&quot;{{imageUrl}}&quot;);">
+<div id="down" class="middlesearchbar cfx">
+    <span class="searchBarSpan">
+        <form class="searchBarForm" action="/" method="get" autocomplete="off">
+            <input type="text" name="key" class="searchBarInput" placeholder="Search for recipes, ingredients..." required="">
+            <button type="submit" class="searchBarButton fa fa-search"></button>
+        </form>
+    </span>
+</div>
+<div class="swipeRecipes cfx">
 
-                                </div>
-                                <div class="thumbName">
-                                    <p>{{name}}</p>
-                                </div>
-                                
-                                <div class="starRating">
-                                    <div class="starRatingBottom">
-                                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                                        <div class="starRatingTop" style="width: 0%">
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
+
+    <div class="swipeTags ">
+        <div class="owlSlider owl-carousel owl-theme" style="opacity: 1; display: block;">
+            <div class="owl-wrapper-outer">
+                <div class="owl-wrapper" style="width: 4120px; left: 0px; display: block; transition: all 0ms ease 0s; transform: translate3d(0px, 0px, 0px);">
+                    {{#each recipes}}
+                    <div class="owl-item" style="width: 206px;">
+                        <div class="item">
+                            <div class="thumbs">
+                                <a class="hrefing cfx" href="/recipe-details/{{_id}}">
+                                    <div class="thumbImage lazyload bgImg" style="background-image: url(&quot;{{imageUrl}}&quot;);">
+
+                                    </div>
+                                    <div class="thumbName">
+                                        <p>{{name}}</p>
+                                    </div>
+
+                                    <div class="starRating">
+                                        <div class="starRatingBottom">
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            <div class="starRatingTop" style="width: 0%">
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="ratCnt">
-                                    <p>(0)</p>
-                                </div>
-                            </a>
+                                    <div class="ratCnt">
+                                        <p>(0)</p>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
+                    {{/each}}
                 </div>
-                {{/each}}
             </div>
         </div>
     </div>
